@@ -1,0 +1,26 @@
+aaa	AAA	950000000	aaaaaa@uoregon.edu	eh	 	
+bbb	BBB	950000001	bbbbbb@uoregon.edu	bee	r	
+ccc	CCC	950000002	cccccc@uoregon.edu	see	r	
+eee	EEE	950000004	eeeeee@uoregon.edu	e	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+vvv	VVV	950000021	vvvvvv@uoregon.edu	vee	r	2020-02-01  >2020-02-01  >2020-02-01  >
+kkk	KKK	950000010	kkkkkk@uoregon.edu	kay	r	2020-02-01  >2020-02-01  >2020-02-01  >
+jjj	JJJ	950000009	jjjjjj@uoregon.edu	jay	r	2020-02-01  >2020-02-01  >2020-02-01  >
+sss	SSS	950000018	ssssss@uoregon.edu	ess	r	2020-02-01  >2020-02-01  >2020-02-01  >
+rrr	RRR	950000017	rrrrrr@uoregon.edu	arr	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+nnn	NNN	950000013	nnnnnn@uoregon.edu	en	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+www	WWW	950000022	wwwwww@uoregon.edu	double-you	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+qqq	QQQ	950000016	qqqqqq@uoregon.edu	cue	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+hhh	HHH	950000007	hhhhhh@uoregon.edu	aitch	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+mmm	MMM	950000012	mmmmmm@uoregon.edu	em	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+ddd	DDD	950000003	dddddd@uoregon.edu	dee	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+yyy	YYY	950000024	yyyyyy@uoregon.edu	why	r	2020-02-01  >2020-02-01  >
+zzz	ZZZ	950000025	zzzzzz@uoregon.edu	zee	r	2020-02-01  >2020-02-01  >2020-02-01  >
+fff	FFF	950000005	ffffff@uoregon.edu	ef	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+ggg	GGG	950000006	gggggg@uoregon.edu	gee	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+xxx	XXX	950000023	xxxxxx@uoregon.edu	ex	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+uuu	UUU	950000020	uuuuuu@uoregon.edu	you	r	2020-02-01  >2020-02-01  >2020-02-01  >
+ppp	PPP	950000015	pppppp@uoregon.edu	pea	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+ttt	TTT	950000019	tttttt@uoregon.edu	tea	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+ooo	OOO	950000014	oooooo@uoregon.edu	oh	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+lll	LLL	950000011	llllll@uoregon.edu	el	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >
+iii	III	950000008	iiiiii@uoregon.edu	eye	r	2020-02-01  >2020-02-01  >2020-02-01  >2020-02-01  >

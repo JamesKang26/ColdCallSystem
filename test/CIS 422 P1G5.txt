@@ -1,0 +1,5 @@
+Owen	McEvoy	951555999	omcevoy@uoregon.edu	0	a	
+Zach	Hoffman	951555111	zachh@uoregon.edu	0	a	
+Mason	Sayyadi	951555222	msayyadi@uoregon.edu	0	a	
+James	Kang	951555333	jkang@uoregon.edu	0	a	
+Sam	Lundquist	951555444	slundqui@uoregon.edu	0	a	

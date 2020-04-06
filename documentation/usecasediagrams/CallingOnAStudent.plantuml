@@ -1,0 +1,45 @@
+@startuml
+actor User as User
+participant ":Instructor Interface" as InstructorUI
+participant ":Cold Call Class" as List
+participant ":Cold Call Queue" as Queue
+participant ":Cold Call Class" as Class
+participant ":State Persistence" as StatePersistence
+participant ":Reporting" as Reporting
+participant "To Remove: Student" as Student
+database "2020-01-01.txt : Daily Log Export" as DailyLogFile
+
+autoactivate on
+
+note over User, DailyLogFile: Previous state data already loaded in
+
+== Getting the queue ==
+User -> InstructorUI : activates queue interface
+InstructorUI -> List : getClassList()
+List --> InstructorUI : list of class names
+InstructorUI -> List : getClass(class_name);
+List --> InstructorUI : class pointer
+InstructorUI -> Class : getQueue()
+Class --> InstructorUI : queue pointer
+InstructorUI -> Queue : getOnDeck()
+Queue --> InstructorUI : current On Deck list provided
+InstructorUI --> User : On Deck UI available
+
+== Removing a student from the On Deck queue ==
+User -> InstructorUI : remove student from On Deck
+InstructorUI -> Queue : removeOnDeck(position, flag)
+Queue -> Student : participate(flag)
+Student --> Queue
+Queue -> Reporting : appendDailyLog(class_name, student, time, flag)
+Reporting -> DailyLogFile : append file
+DailyLogFile --> Reporting
+Reporting --> Queue
+note over Queue: student is reinserted randomly
+Queue -> StatePersistence : exportState(roster)
+StatePersistence --> Queue
+Queue --> InstructorUI
+InstructorUI -> Queue : getOnDeck()
+Queue --> InstructorUI : current On Deck list updated
+InstructorUI --> User : On Deck UI updated
+
+@enduml

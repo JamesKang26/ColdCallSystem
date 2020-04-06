@@ -1,0 +1,28 @@
+@startuml
+actor User as User
+participant ":Instructor Interface" as InstructorUI
+participant ":Cold Call Class Info" as Class
+participant ":Reporting" as Reporting
+participant "CIS 422-report.txt : Class Report" as ReportFile
+
+autoactivate on
+
+note over User, ReportFile: Previous state data already loaded in
+
+== Generating end of term report ==
+
+User -> InstructorUI : triggers performance summary export
+InstructorUI -> Class : exportReport()
+Class -> Reporting : exportReport()
+Reporting -> ReportFile : write file
+ReportFile --> Reporting : file exported successfully
+Reporting --> Class
+Class --> InstructorUI
+InstructorUI --> User
+
+== Review report ==
+
+User -> ReportFile : open file in text editor/spreadsheet program
+ReportFile --> User : finish review/formula calculations/etc
+
+@enduml

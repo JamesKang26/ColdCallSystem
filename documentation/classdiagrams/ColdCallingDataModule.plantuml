@@ -1,0 +1,68 @@
+@startuml
+
+class "ColdCallClassList" as List {
+  ..internal state storage..
+  -classes
+  ..loading/exporting..
+  +loadClasses():void
+  +saveClasses():void
+  ..class management..
+  +addClass(string):void
+  +deleteClass(string):void
+  +getClassList():vector<string>
+  +getclass(string):ColdCallClass *
+}
+
+class "ColdCallClass" as Class {
+  ..internal state storage..
+  -class_name
+  -roster
+  -new_roster
+  -call_queue
+  ..internal methods..
+  -compareRosterShared(vector<shared_ptr<Student *>>, <pair<vector<shared_ptr<Student *>, shared_ptr<Student *>>, vector<shared_ptr<Student *>>):bool
+  ..state management methods..
+  +loadState(string):void
+  ..info methods..
+  +getClassName():string
+  +getQueue():ColdCallQueue *
+  +getStudents():vector<Student *>
+  ..roster management methods..
+  +loadRoster(string):void
+  +compareRoster(vector<Student *>, <pair<vector<Student *, Student *>, vector<Student *>):bool
+  +updateRoster(bool):void
+  +exportRoster(string)
+  +addStudent(shared_ptr<Student>):void
+  ..reporting methods..
+  +exportReport(string):void
+
+}
+
+class "ColdCallQueue" as Queue {
+  ..internal state storage..
+  -student_queue
+  -class_name
+  ..info methods..
+  +getClassName():string
+  +setClassName(string):void
+  ..state methods..
+  +loadQueue(vector<student *>):void
+  +exportQueue():void
+  +addStudent(Student *):void
+  ..interface methods..
+  +getOnDeck(int):vector<Student *>
+  +removeOnDeck(int, char):void
+}
+
+List --o Class
+Class --o Queue
+
+class "Legend" as Legend {
+  -privateMemberVariable
+  -privateMethod()
+  +publicMethod()
+}
+
+Queue -[hidden]right- Legend
+
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+package "User Interface" {
+  [Class Roster Interface] as RosterUI
+  [On Deck Interface] as OnDeckUI
+}
+
+package "Cold Calling Data Module" {
+  [ColdCallClassList] as List
+  [ColdCallClass] as Class
+  [ColdCallQueue] as Queue
+}
+
+package "Data Storage and Reporting Module" {
+  [State Persistence] as StatePersistence
+  [Roster Importer/Exporter] as RosterIE
+  [Reporting] as Reporting
+}
+
+[RosterUI] -[hidden]- [OnDeckUI]
+[RosterUI] -[hidden]right- [Class]
+[StatePersistence] -[hidden]down- [RosterIE]
+[RosterIE] -[hidden]down- [Reporting]
+
+[RosterUI] <-right-> [List]
+[RosterUI] <-right-> [Class]
+[OnDeckUI] <-right-> [Queue]
+[List] -down-> [Class]
+[Class] -down-> [Queue]
+[Class] <-right-> [StatePersistence]
+[RosterIE] -up-> [StatePersistence]
+[Reporting] -up-> [StatePersistence]
+[Class] <-right-> [RosterIE]
+[Class] -right-> [Reporting]
+[Queue] -right-> [Reporting]
+[Queue] -right-> [StatePersistence]
+@enduml

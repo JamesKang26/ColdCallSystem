@@ -1,0 +1,28 @@
+@startuml
+actor User as User
+participant ":Instructor Interface" as InstructorUI
+participant ":Cold Call Class List" as List
+participant ":Cold Call Queue" as Queue
+participant ":Cold Call Class" as Class
+participant ":State Persistence" as StatePersistence
+participant ":Student" as Student
+
+autoactivate on
+
+== Previous state loading ==
+User -> InstructorUI : loads program
+InstructorUI -> List : loadClasses()
+loop foreach class
+  List -> Class : loadState()
+  Class -> StatePersistence : loadState()
+  StatePersistence -> Student : load Student data
+  Student --> StatePersistence
+  StatePersistence --> Class : load saved class data
+  Class -> Queue : loadQueue()
+  Queue --> Class
+  Class --> List : data for this class loaded
+end
+List --> InstructorUI : data for all classes loaded
+InstructorUI --> User : all previous data loaded
+
+@enduml

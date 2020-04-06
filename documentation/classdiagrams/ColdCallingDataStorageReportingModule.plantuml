@@ -1,0 +1,37 @@
+@startuml
+
+class "StatePersistence" as StatePersistence {
+  ..class management..
+  +storeClass(vector<Student *>):void
+  +loadClass(string):vector<shared_ptr<Student>>
+  +deleteClass(string):void
+  ..class list management..
+  +saveClassList(vector<string>):void
+  +loadClassList():vector<string>
+  ..directory management..
+  +createDir():void
+  +getPath(int):string
+}
+
+class "RosterIE" as RosterIE {
+  -getDelim(string):char
+  +importRoster(string):vector<shared_ptr<Student>>
+  +exportRoster(vector<shared_ptr<Student>>, string):void
+}
+
+class "Reporting" as Reporting {
+  +appendDailyLog(string, Student, time_t, char):void
+  +exportTermData(vector<shared_ptr<Student>>, string):void
+}
+
+StatePersistence .. RosterIE
+StatePersistence .. Reporting
+
+class "Legend" as Legend {
+  -privateMethod()
+  +publicMethod()
+}
+
+StatePersistence -[hidden]right- Legend
+
+@enduml

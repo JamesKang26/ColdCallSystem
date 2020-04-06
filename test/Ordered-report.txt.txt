@@ -1,0 +1,27 @@
+# of Participations	First Name	Last Name	Student ID	Email	Phonetic Spelling	Reveal Code
+0	aaa	AAA	950000000	aaaaaa@uoregon.edu	eh	 
+0	bbb	BBB	950000001	bbbbbb@uoregon.edu	bee	r
+0	ccc	CCC	950000002	cccccc@uoregon.edu	see	r
+6	eee	EEE	950000004	eeeeee@uoregon.edu	e	r
+3	vvv	VVV	950000021	vvvvvv@uoregon.edu	vee	r
+3	kkk	KKK	950000010	kkkkkk@uoregon.edu	kay	r
+3	jjj	JJJ	950000009	jjjjjj@uoregon.edu	jay	r
+3	sss	SSS	950000018	ssssss@uoregon.edu	ess	r
+5	rrr	RRR	950000017	rrrrrr@uoregon.edu	arr	r
+4	nnn	NNN	950000013	nnnnnn@uoregon.edu	en	r
+5	www	WWW	950000022	wwwwww@uoregon.edu	double-you	r
+5	qqq	QQQ	950000016	qqqqqq@uoregon.edu	cue	r
+5	hhh	HHH	950000007	hhhhhh@uoregon.edu	aitch	r
+4	mmm	MMM	950000012	mmmmmm@uoregon.edu	em	r
+6	ddd	DDD	950000003	dddddd@uoregon.edu	dee	r
+2	yyy	YYY	950000024	yyyyyy@uoregon.edu	why	r
+3	zzz	ZZZ	950000025	zzzzzz@uoregon.edu	zee	r
+4	fff	FFF	950000005	ffffff@uoregon.edu	ef	r
+5	ggg	GGG	950000006	gggggg@uoregon.edu	gee	r
+4	xxx	XXX	950000023	xxxxxx@uoregon.edu	ex	r
+3	uuu	UUU	950000020	uuuuuu@uoregon.edu	you	r
+5	ppp	PPP	950000015	pppppp@uoregon.edu	pea	r
+4	ttt	TTT	950000019	tttttt@uoregon.edu	tea	r
+6	ooo	OOO	950000014	oooooo@uoregon.edu	oh	r
+4	lll	LLL	950000011	llllll@uoregon.edu	el	r
+4	iii	III	950000008	iiiiii@uoregon.edu	eye	r

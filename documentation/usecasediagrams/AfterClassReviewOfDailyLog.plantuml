@@ -1,0 +1,35 @@
+@startuml
+actor User as User
+participant ":Instructor Interface" as InstructorUI
+participant ":Cold Call Class" as List
+participant ":Cold Call Queue" as Queue
+participant ":State Persistence" as StatePersistence
+participant ":Reporting" as Reporting
+participant "To Remove: Student" as Student
+database "CIS 422-2020-01-01 : Daily Log Export" as DailyLogFile
+
+autoactivate on
+
+== Previously: Removing a student from the On Deck queue ==
+User -> InstructorUI : remove student from On Deck
+InstructorUI -> Queue : removeOnDeck(position, flag)
+Queue -> Student : participate(flag)
+Student --> Queue
+Queue -> Reporting : appendDailyLog(class_name, student, time, flag)
+Reporting -> DailyLogFile : append file
+DailyLogFile --> Reporting
+Reporting --> Queue
+note over Queue: student is reinserted randomly
+Queue -> StatePersistence : exportState(roster)
+StatePersistence --> Queue
+Queue --> InstructorUI
+InstructorUI -> Queue : getOnDeck()
+Queue --> InstructorUI : current On Deck list updated
+InstructorUI --> User : On Deck UI updated
+
+== Examine daily log ==
+
+User -> DailyLogFile : opens log file in a text editor/spreadsheet software
+DailyLogFile --> User : reads the day's participation log
+
+@enduml

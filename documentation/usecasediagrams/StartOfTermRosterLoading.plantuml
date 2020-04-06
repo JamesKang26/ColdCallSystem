@@ -1,0 +1,60 @@
+@startuml
+actor User as User
+participant ":Instructor Interface" as InstructorUI
+participant ":Cold Call Class List" as List
+participant ":Cold Call Queue" as Queue
+participant ":Cold Call Class" as Class
+participant ":State Persistence" as StatePersistence
+participant ":Roster Import/Export" as RosterIE
+participant "CIS 422 Roster.csv : Roster File" as RosterFile
+
+autoactivate on
+
+note over User, RosterFile: Previous state data may or may not already be loaded in
+
+== Add new class ==
+User -> InstructorUI : user chooses to create a new class
+InstructorUI -> User : prompts for name of new class
+User --> InstructorUI
+InstructorUI -> List : addClass(class_name)
+List -> Class : loadState()
+Class -> StatePersistence : loadState()
+StatePersistence --> Class : nothing loaded as class is new
+Class -> Queue : loadQueue(roster)
+Queue --> Class
+Class --> List
+List --> InstructorUI
+InstructorUI --> User
+
+
+== Import the new roster ==
+User -> InstructorUI : user chooses to import a new roster
+InstructorUI -> Class : loadRoster()
+Class -> RosterIE : loadRoster()
+RosterIE -> RosterFile : read file
+RosterFile --> RosterIE
+RosterIE --> Class
+Class --> InstructorUI
+
+InstructorUI -> Class : compareRoster()
+Class --> InstructorUI : comparison results
+InstructorUI -> User : display comparison and ask for confirmation
+User --> InstructorUI : return instructor's choice
+
+alt import confirmed
+  InstructorUI -> Class : updateRoster(true)
+  Class -> Queue : loadQueue()
+  Queue --> Class
+  Class -> StatePersistence : storeClass()
+  StatePersistence --> Class
+  Class --> InstructorUI
+
+else import cancelled
+  InstructorUI -> Class : updateRoster(false)
+  note right: imported data discarded
+  Class --> InstructorUI
+end
+
+InstructorUI --> User
+
+@enduml

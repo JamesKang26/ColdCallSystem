@@ -1,0 +1,93 @@
+@startuml
+(*) --> "
+{{
+salt
+{
+  InVoke
+  [Start A Class Session]
+  [Add A Class]
+  [Delete A Class]
+  [Term Report]
+  [End of Day]
+}
+}}
+" as MainMenu
+
+MainMenu -right-> "
+{{
+salt
+{
+InVoke
+Start A Class Session
+[Class A]
+[Class B]
+}
+}}
+" as StartAClassChooser
+
+StartAClassChooser -right-> "
+{{
+salt
+{
+Class A
+[Student A] | [Student B] | [Student C] | [Student D]
+}
+}}
+" as ColdCallQueue
+
+
+MainMenu -right-> "
+{{
+salt
+{
+InVoke
+Enter Class Name
+Class name: | "Class A"
+}
+}}
+" as AddAClass
+
+AddAClass -left-> MainMenu
+
+MainMenu -right-> "
+{{
+salt
+{
+InVoke
+Delete a Class
+[Class A]
+[Class B]
+}
+}}
+" as DeleteAClass
+
+DeleteAClass -right-> "
+{{
+salt
+{
+InVoke
+Are you sure you want to delete this class
+[Yes]
+[No]
+}
+}}
+" as ConfirmDelete
+
+ConfirmDelete -left-> DeleteAClass
+
+MainMenu -right-> "
+{{
+salt
+{
+InVoke
+Term Report
+[Class A]
+[Class B]
+}
+}}
+" as GenerateReport
+
+StartAClassChooser -[hidden]down-> AddAClass
+AddAClass-[hidden]down-> DeleteAClass
+DeleteAClass-[hidden]down-> GenerateReport
+@enduml
